@@ -6,7 +6,7 @@
 /*   By: haarab <haarab@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 17:42:02 by haarab            #+#    #+#             */
-/*   Updated: 2023/02/23 11:32:44 by haarab           ###   ########.fr       */
+/*   Updated: 2023/04/30 19:01:07 by haarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	ft_image(t_vars *vars)
 	vars->door, &img_width, &img_height);
 	if (vars->img == NULL || vars->ima == NULL || vars->imb == NULL
 		||vars->imc == NULL || vars->imd == NULL || vars->ime == NULL)
-		exit (1);
+		writeerror();
 	ft_putimage(vars);
 }
 

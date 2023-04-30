@@ -6,7 +6,7 @@
 /*   By: haarab <haarab@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 19:13:57 by haarab            #+#    #+#             */
-/*   Updated: 2023/02/24 09:47:00 by haarab           ###   ########.fr       */
+/*   Updated: 2023/04/30 19:16:26 by haarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,14 +83,13 @@ int	main(int ac, char **av)
 	int		len;
 
 	s = map(&vars, av[1]);
+	check_mapiscorrect(s);
 	n = check_line(s);
 	len = ft_strlen(s[0]);
 	read_line(s);
 	handle_map(s);
 	if (ac != 2)
-	{
 		return (0);
-	}
 	vars.mlx = mlx_init();
 	vars.win = mlx_new_window(vars.mlx, len * 50, n * 50, "game");
 	mlx_key_hook(vars.win, key_hook, &vars);

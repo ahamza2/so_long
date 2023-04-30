@@ -6,7 +6,7 @@
 /*   By: haarab <haarab@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 19:14:51 by haarab            #+#    #+#             */
-/*   Updated: 2023/02/24 10:55:10 by haarab           ###   ########.fr       */
+/*   Updated: 2023/04/30 18:58:50 by haarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,5 +125,7 @@ void	ft_exitleft(t_vars *vars, int i, int j);
 void	free_malloc(char **str);
 
 int		closeee(void);
+
+void	writeerror(void);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: haarab <haarab@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 17:25:04 by haarab            #+#    #+#             */
-/*   Updated: 2023/02/24 09:43:02 by haarab           ###   ########.fr       */
+/*   Updated: 2023/04/30 19:16:43 by haarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	read_line(char **str)
 	{
 		if (str[0][j] != '1')
 		{
-			write (1, "ERROR LINE LWAL", 15);
+			write (1, "Error\n", 6);
 			exit(1);
 		}
 		j++;
@@ -46,7 +46,7 @@ void	read_linelwast(char **str)
 		{
 			if (str[i][0] != '1' || str[i][len] != '1')
 			{
-				write (1, "ERROR line lwast", 16);
+				write (1, "Error\n", 6);
 				exit (1);
 			}
 			j++;
@@ -67,7 +67,7 @@ void	read_linelkher(char **str)
 	{
 		if (str[i][j] != '1')
 		{
-			write (1, "ERRORE LINE LKHER", 17);
+			write (1, "Error\n", 6);
 			exit(1);
 		}
 		j++;
@@ -88,13 +88,11 @@ void	check_mapiscorrect(char **str)
 	{
 		j = 0;
 		while (str[i][j] != '\0')
-		{
 			j++;
-		}
 		i++;
 		if (j != len && i != k)
 		{
-			write (1, "map is not corrict", 18);
+			write (1, "Error\n", 6);
 			exit (1);
 		}	
 	}

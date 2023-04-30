@@ -6,11 +6,17 @@
 /*   By: haarab <haarab@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 09:04:05 by haarab            #+#    #+#             */
-/*   Updated: 2023/02/22 17:04:16 by haarab           ###   ########.fr       */
+/*   Updated: 2023/04/30 19:00:47 by haarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+void	writeerror(void)
+{
+	write (1, "Error\n", 6);
+	exit (1);
+}
 
 char	**checkpath(char **str)
 {
@@ -59,7 +65,7 @@ void	map_player(char **str)
 	}
 	if (checkcoin(str) != 0)
 	{
-		write (1, "ma9darch nakel", 14);
+		write (1, "Error\n", 6);
 		exit (1);
 	}
 }
@@ -77,11 +83,11 @@ void	handle_map(char **str)
 		{
 			if (str[i][j] != '0' && str[i][j] != '1' && str[i][j] != 'C' &&
 				str[i][j] != 'P' && str[i][j] != 'E')
-				exit (1);
+				writeerror();
 			if (checkdoor(str) != 1)
-				exit (1);
+				writeerror();
 			if (checkpersone(str) != 1)
-				exit (1);
+				writeerror();
 			j++;
 		}
 		i++;
@@ -111,7 +117,7 @@ char	**handeldoor(char **str)
 	}
 	if (counter == 0)
 	{
-		write (1, "ma9dartch nwsal lbab", 20);
+		write (1, "Error\n", 6);
 		exit (1);
 	}
 	return (str);
