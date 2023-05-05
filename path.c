@@ -6,7 +6,7 @@
 /*   By: haarab <haarab@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 09:00:16 by haarab            #+#    #+#             */
-/*   Updated: 2023/05/05 14:18:12 by haarab           ###   ########.fr       */
+/*   Updated: 2023/05/05 18:58:12 by haarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,8 @@ void	path_down(char **str, int i, int j)
 	}
 }
 
-int	check_p(char **str, int i, int j)
+int	check_p(char **str, int i, int j, int counter)
 {
-	int	counter;
-
-	counter = 0;
 	if (str[i][j] == 'P')
 	{
 		if (str[i - 1][j] == 'C' || str[i - 1][j] == '0')

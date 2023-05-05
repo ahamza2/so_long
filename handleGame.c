@@ -6,7 +6,7 @@
 /*   By: haarab <haarab@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 09:04:05 by haarab            #+#    #+#             */
-/*   Updated: 2023/05/05 15:56:01 by haarab           ###   ########.fr       */
+/*   Updated: 2023/05/05 18:59:04 by haarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char	**checkpath(char **str)
 			counter = 0;
 			if (str[i][j] == 'P')
 			{
-				counter = check_p(str, i, j);
+				counter = check_p(str, i, j, counter);
 			}
 			if (counter != 0)
 				checkpath(str);

@@ -6,7 +6,7 @@
 /*   By: haarab <haarab@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 19:14:51 by haarab            #+#    #+#             */
-/*   Updated: 2023/05/05 17:14:10 by haarab           ###   ########.fr       */
+/*   Updated: 2023/05/05 19:15:04 by haarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,10 @@ typedef struct s_vars
 	char	**move;
 	char	*wall;
 	char	*person;
-	char	*walo;
+	char	*nothing;
 	char	*coin;
-	char	*bab;
 	char	*door;
+	char	*open_door;
 	int		count;
 }	t_vars;
 
@@ -59,7 +59,7 @@ void	ft_image(t_vars *vars);
 
 void	image_wall(t_vars *vars, int i, int j);
 
-void	image_walo(t_vars *vars, int i, int j);
+void	image_nothing(t_vars *vars, int i, int j);
 
 void	image_persone(t_vars *vars, int i, int j);
 
@@ -97,7 +97,7 @@ void	path_right(char **str, int i, int j);
 
 void	path_down(char **str, int i, int j);
 
-int		check_p(char **str, int i, int j);
+int		check_p(char **str, int i, int j, int counter);
 
 int		ft_get(char *str);
 
