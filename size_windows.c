@@ -1,38 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   size_windows.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: haarab <haarab@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/11 18:59:48 by haarab            #+#    #+#             */
-/*   Updated: 2023/05/05 16:18:17 by haarab           ###   ########.fr       */
+/*   Created: 2023/05/05 17:01:31 by haarab            #+#    #+#             */
+/*   Updated: 2023/05/05 17:11:37 by haarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "so_long.h"
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 5
-# endif
+int	ft_width(char **map)
+{
+	int		i;
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <fcntl.h>
+	i = 0;
+	while (map[i])
+	{
+		i++;
+	}
+	if (i > 28)
+	{
+		write (1, "width_is_larg\n", 14);
+		exit (0);
+	}
+	return (i);
+}
 
-char	*get_next_line(int fd);
+size_t	ft_height(const char *str)
+{
+	size_t	i;
 
-size_t	ft_strlen(const char *s);
-
-int		check_new_line(char *str);
-
-char	*ft_cut(char *str);
-
-char	*ft_strjoin(char *s1, char *s2);
-
-char	*ft_get_line(char *str);
-
-char	*read_file(int fd, char *str);
-
-#endif
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	if (i > 51)
+	{
+		write (1, "hieght_is_larg\n", 15);
+		exit (0);
+	}
+	return (i);
+}

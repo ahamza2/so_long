@@ -6,7 +6,7 @@
 /*   By: haarab <haarab@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 17:25:04 by haarab            #+#    #+#             */
-/*   Updated: 2023/04/30 19:16:43 by haarab           ###   ########.fr       */
+/*   Updated: 2023/05/05 17:00:05 by haarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	read_line(char **str)
 	{
 		if (str[0][j] != '1')
 		{
-			write (1, "Error\n", 6);
+			write (2, "Error\n", 6);
 			exit(1);
 		}
 		j++;
@@ -38,7 +38,7 @@ void	read_linelwast(char **str)
 
 	i = 1;
 	len = ft_strlen(str[i]) - 1;
-	k = check_line(str) - 2;
+	k = ft_width(str) - 2;
 	while (i <= k)
 	{
 		j = 0;
@@ -46,7 +46,7 @@ void	read_linelwast(char **str)
 		{
 			if (str[i][0] != '1' || str[i][len] != '1')
 			{
-				write (1, "Error\n", 6);
+				write (2, "Error\n", 6);
 				exit (1);
 			}
 			j++;
@@ -61,13 +61,13 @@ void	read_linelkher(char **str)
 	int	i;
 	int	j;
 
-	i = check_line(str) - 1;
+	i = ft_width(str) - 1;
 	j = 0;
 	while (str[i][j] != '\0')
 	{
 		if (str[i][j] != '1')
 		{
-			write (1, "Error\n", 6);
+			write (2, "Error\n", 6);
 			exit(1);
 		}
 		j++;
@@ -82,8 +82,13 @@ void	check_mapiscorrect(char **str)
 	int	k;
 
 	i = 0;
+	if (checkcoin(str) == 0)
+	{
+		write (2, "Error\n", 6);
+		exit (1);
+	}
 	len = ft_strlen(str[i]);
-	k = check_line(str) - 1;
+	k = ft_width(str) - 1;
 	while (i <= k)
 	{
 		j = 0;
@@ -92,7 +97,7 @@ void	check_mapiscorrect(char **str)
 		i++;
 		if (j != len && i != k)
 		{
-			write (1, "Error\n", 6);
+			write (2, "Error\n", 6);
 			exit (1);
 		}	
 	}

@@ -6,7 +6,7 @@
 /*   By: haarab <haarab@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 09:04:05 by haarab            #+#    #+#             */
-/*   Updated: 2023/04/30 19:00:47 by haarab           ###   ########.fr       */
+/*   Updated: 2023/05/05 15:56:01 by haarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	writeerror(void)
 {
-	write (1, "Error\n", 6);
+	write (2, "Error\n", 6);
 	exit (1);
 }
 
@@ -25,22 +25,22 @@ char	**checkpath(char **str)
 	int	counter;
 
 	i = 0;
-	counter = 0;
 	while (str[i])
 	{
 		j = 0;
 		while (str[i][j] != '\0')
 		{
+			counter = 0;
 			if (str[i][j] == 'P')
 			{
-				check_p(str, i, j, counter);
+				counter = check_p(str, i, j);
 			}
+			if (counter != 0)
+				checkpath(str);
 			j++;
 		}
 		i++;
 	}
-	if (counter != 0)
-		checkpath(str);
 	return (str);
 }
 
@@ -57,15 +57,14 @@ void	map_player(char **str)
 		{
 			if (str[i][j] == 'P')
 				checkpath(str);
-			if (str[i][j] == 'E')
-				handeldoor(str);
 			j++;
 		}
 		i++;
 	}
+	handeldoor(str);
 	if (checkcoin(str) != 0)
 	{
-		write (1, "Error\n", 6);
+		write (2, "Error\n", 6);
 		exit (1);
 	}
 }
@@ -105,7 +104,7 @@ char	**handeldoor(char **str)
 	while (str[i])
 	{
 		j = 0;
-		while (str[i][j] != 0)
+		while (str[i][j])
 		{
 			if (str[i][j] == 'E')
 				if (str[i - 1][j] == 'P' || str[i][j - 1] == 'P' ||
@@ -117,7 +116,7 @@ char	**handeldoor(char **str)
 	}
 	if (counter == 0)
 	{
-		write (1, "Error\n", 6);
+		write (2, "Error\n", 6);
 		exit (1);
 	}
 	return (str);

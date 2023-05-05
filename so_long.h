@@ -6,7 +6,7 @@
 /*   By: haarab <haarab@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 19:14:51 by haarab            #+#    #+#             */
-/*   Updated: 2023/04/30 18:58:50 by haarab           ###   ########.fr       */
+/*   Updated: 2023/05/05 17:14:10 by haarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <fcntl.h>
 # include <mlx.h>
 # include "./get_next_line/get_next_line.h"
-# include <stdio.h>
 
 typedef struct s_vars
 {
@@ -90,19 +89,19 @@ void	clicright(t_vars *vars);
 
 void	clickleft(t_vars *vars);
 
-int		path_up(char **str, int i, int j, int counter);
+void	path_up(char **str, int i, int j);
 
-int		path_left(char **str, int i, int j, int counter);
+void	path_left(char **str, int i, int j);
 
-int		path_right(char **str, int i, int j, int counter);
+void	path_right(char **str, int i, int j);
 
-int		path_down(char **str, int i, int j, int counter);
+void	path_down(char **str, int i, int j);
 
-int		check_p(char **str, int i, int j, int counter);
+int		check_p(char **str, int i, int j);
 
 int		ft_get(char *str);
 
-int		check_line(char **map);
+int		ft_width(char **map);
 
 char	**map(t_vars *vars, char *f);
 
@@ -127,5 +126,7 @@ void	free_malloc(char **str);
 int		closeee(void);
 
 void	writeerror(void);
+
+size_t	ft_height(const char *str);
 
 #endif

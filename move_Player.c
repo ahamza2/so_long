@@ -6,7 +6,7 @@
 /*   By: haarab <haarab@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 15:58:13 by haarab            #+#    #+#             */
-/*   Updated: 2023/04/30 14:20:48 by haarab           ###   ########.fr       */
+/*   Updated: 2023/05/05 16:36:53 by haarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,6 @@ void	click_up(t_vars *vars, int i, int j)
 		vars->move[i - 1][j] = k;
 	}
 }
-		// vars->move[i][j] = '0';
-		// vars->move[i - 1][j] = 'P';
 
 void	click_down(t_vars *vars, int i, int j)
 {
@@ -51,8 +49,6 @@ void	click_down(t_vars *vars, int i, int j)
 		vars->move[i + 1][j] = k;
 	}
 }
-		// vars->move[i][j] = '0';
-		// vars->move[i + 1][j] = 'P';
 
 void	click_right(t_vars *vars, int i, int j)
 {
@@ -72,8 +68,6 @@ void	click_right(t_vars *vars, int i, int j)
 		vars->move[i][j + 1] = k;
 	}
 }
-		// vars->move[i][j] = '0';
-		// vars->move[i][j + 1] = 'P';
 
 void	click_left(t_vars *vars, int i, int j)
 {
@@ -93,11 +87,9 @@ void	click_left(t_vars *vars, int i, int j)
 		vars->move[i][j - 1] = k;
 	}
 }
-		// vars->move[i][j] = '0';
-		// vars->move[i][j - 1] = 'P';
 
 int	closeee(void)
 {
-	exit(1);
+	exit(0);
 	return (17);
 }
