@@ -6,7 +6,7 @@
 /*   By: haarab <haarab@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 17:42:02 by haarab            #+#    #+#             */
-/*   Updated: 2023/05/05 19:14:21 by haarab           ###   ########.fr       */
+/*   Updated: 2023/05/06 14:40:06 by haarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_image(t_vars *vars)
 	int		img_width;
 	int		img_height;
 
-	vars->wall = "./textures/hit.xpm";
+	vars->wall = "./textures/wall.xpm";
 	vars->person = "./textures/persone.xpm";
 	vars->nothing = "./textures/nothing.xpm";
 	vars->coin = "./textures/coin.xpm";

@@ -6,7 +6,7 @@
 /*   By: haarab <haarab@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 19:14:51 by haarab            #+#    #+#             */
-/*   Updated: 2023/05/05 19:15:04 by haarab           ###   ########.fr       */
+/*   Updated: 2023/05/06 16:05:50 by haarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,13 @@ typedef struct s_vars
 	int		count;
 }	t_vars;
 
-void	ft_putchar(char c);
+void	read_line(char **str);
 
-void	ft_putnbr(int n);
+void	read_middlelines(char **str);
+
+void	read_lastline(char **str);
+
+void	check_mapiscorrect(char **str);
 
 int		checkcoin(char **str);
 
@@ -47,15 +51,23 @@ int		checkpersone(char **str);
 
 int		checkdoor(char **str);
 
-char	**checkpath(char **str);
+void	ft_putchar(char c);
 
-void	map_player(char **str);
+void	ft_putnbr(int n);
 
-void	handle_map(char **str);
+void	ft_exitup(t_vars *vars, int i, int j);
 
-char	**handeldoor(char **str);
+void	ft_exitdown(t_vars *vars, int i, int j);
+
+void	ft_exitright(t_vars *vars, int i, int j);
+
+void	ft_exitleft(t_vars *vars, int i, int j);
+
+void	free_malloc(char **str);
 
 void	ft_image(t_vars *vars);
+
+void	image_e(t_vars *vars, int i, int j);
 
 void	image_wall(t_vars *vars, int i, int j);
 
@@ -67,9 +79,17 @@ void	image_c(t_vars *vars, int i, int j);
 
 void	image_end(t_vars *vars, int i, int j);
 
-void	image_e(t_vars *vars, int i, int j);
-
 void	ft_putimage(t_vars *vars);
+
+void	writeerror(void);
+
+char	**checkpath(char **str);
+
+void	map_player(char **str);
+
+void	handle_map(char **str);
+
+char	**handeldoor(char **str);
 
 void	click_up(t_vars *vars, int i, int j);
 
@@ -78,6 +98,8 @@ void	click_down(t_vars *vars, int i, int j);
 void	click_right(t_vars *vars, int i, int j);
 
 void	click_left(t_vars *vars, int i, int j);
+
+int		closeee(void);
 
 int		key_hook(int keycode, t_vars *vars);
 
@@ -99,34 +121,14 @@ void	path_down(char **str, int i, int j);
 
 int		check_p(char **str, int i, int j, int counter);
 
-int		ft_get(char *str);
-
 int		ft_width(char **map);
+
+size_t	ft_height(const char *str);
+
+int		ft_get(char *str);
 
 char	**map(t_vars *vars, char *f);
 
-void	read_linelkher(char **str);
-
-void	read_line(char **str);
-
-void	read_linelwast(char **str);
-
-void	check_mapiscorrect(char **str);
-
-void	ft_exitup(t_vars *vars, int i, int j);
-
-void	ft_exitdown(t_vars *vars, int i, int j);
-
-void	ft_exitright(t_vars *vars, int i, int j);
-
-void	ft_exitleft(t_vars *vars, int i, int j);
-
-void	free_malloc(char **str);
-
-int		closeee(void);
-
-void	writeerror(void);
-
-size_t	ft_height(const char *str);
+int		check_av(char *str);
 
 #endif

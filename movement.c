@@ -6,7 +6,7 @@
 /*   By: haarab <haarab@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 09:22:41 by haarab            #+#    #+#             */
-/*   Updated: 2023/02/22 17:04:54 by haarab           ###   ########.fr       */
+/*   Updated: 2023/05/05 21:07:29 by haarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	key_hook(int keycode, t_vars *vars)
 		clickleft(vars);
 	if (keycode == 53 || keycode == 7)
 	{
-		write (1, "game over", 9);
+		write (1, "game over\n", 10);
 		exit (0);
 	}
 	ft_putimage(vars);

@@ -6,7 +6,7 @@
 /*   By: haarab <haarab@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 17:25:04 by haarab            #+#    #+#             */
-/*   Updated: 2023/05/05 18:45:49 by haarab           ###   ########.fr       */
+/*   Updated: 2023/05/06 16:05:50 by haarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ void	read_line(char **str)
 		}
 		j++;
 	}
-	read_linelwast(str);
+	read_middlelines(str);
 }
 
-void	read_linelwast(char **str)
+void	read_middlelines(char **str)
 {
 	int		i;
 	int		j;
@@ -53,10 +53,10 @@ void	read_linelwast(char **str)
 		}
 		i++;
 	}
-	read_linelkher(str);
+	read_lastline(str);
 }
 
-void	read_linelkher(char **str)
+void	read_lastline(char **str)
 {
 	int	i;
 	int	j;
@@ -94,11 +94,11 @@ void	check_mapiscorrect(char **str)
 		j = 0;
 		while (str[i][j] != '\0')
 			j++;
-		i++;
-		if (j != len && i != k)
+		if (j != len)
 		{
 			write (2, "Error\n", 6);
 			exit (1);
 		}	
+		i++;
 	}
 }

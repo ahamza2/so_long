@@ -6,7 +6,7 @@
 #    By: haarab <haarab@student.1337.ma>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/21 16:11:37 by haarab            #+#    #+#              #
-#    Updated: 2023/05/05 17:09:18 by haarab           ###   ########.fr        #
+#    Updated: 2023/05/06 16:18:39 by haarab           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,14 +17,15 @@ CFLAGS = -Wall -Wextra -Werror
 RM = rm -f
 MINI = -lmlx -lmlx -framework OpenGL -framework AppKit
 
-SRC = checkmap.c size_windows.c counter.c  ft_exit.c ft_map.c handleGame.c image.c move_Player.c movement.c path.c so_long.c get_next_line/get_next_line.c get_next_line/get_next_line_utils.c
-OBJS =  checkmap.o size_windows.o scounter.o ft_exit.o ft_map.o handleGame.o image.o move_Player.o movement.o path.o so_long.o get_next_line/get_next_line.o get_next_line/get_next_line_utils.o
+SRCS = checkmap.c size_windows.c counter.c  ft_exit.c ft_map.c handlegame.c image.c move_player.c movement.c path.c so_long.c get_next_line/get_next_line.c get_next_line/get_next_line_utils.c
 
+OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
 
-$(NAME) : $(SRC)
-	$(CC) $(CFLAGS) $(SRC) $(MINI)  -o so_long
+
+$(NAME) : $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) $(MINI) -o $(NAME)
 
 clean:
 	$(RM) $(OBJS)

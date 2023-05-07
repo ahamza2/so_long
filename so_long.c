@@ -6,7 +6,7 @@
 /*   By: haarab <haarab@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 19:13:57 by haarab            #+#    #+#             */
-/*   Updated: 2023/05/05 18:59:27 by haarab           ###   ########.fr       */
+/*   Updated: 2023/05/06 15:44:47 by haarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,23 +31,6 @@ int	ft_get(char *str)
 		free(s);
 	}
 	close(fd);
-	return (i);
-}
-
-int	check_line(char **map)
-{
-	int		i;
-
-	i = 0;
-	while (map[i])
-	{
-		i++;
-	}
-	if (i > 28)
-	{
-		write (1, "mapislarg\n", 10);
-		exit (0);
-	}
 	return (i);
 }
 
